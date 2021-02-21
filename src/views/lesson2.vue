@@ -19,7 +19,7 @@
   <div>
     <a-row type="flex" justify="center">
       <a-col :span="24" class="tops">
-        <h1 class="head">Bisection</h1>
+        <h1 class="head">False-Position</h1>
       </a-col>
       <a-col :span="1" class="TTT"> X : </a-col>
       <a-col :span="7">
@@ -66,12 +66,12 @@ export default {
           dataIndex: 'xr_start'
         },
         {
-          title: 'Xm',
-          dataIndex: 'xm'
+          title: 'X1',
+          dataIndex: 'x1'
         },
         {
-          title: 'F(Xm)',
-          dataIndex: 'fxm'
+          title: 'F(X1)',
+          dataIndex: 'fx1'
         },
         {
           title: 'ES',
@@ -89,14 +89,14 @@ export default {
       }
       // console.log(parseInt(this.xl))
       // console.log(parseInt(this.xr))
-      var dataA = await this.axios.post('http://localhost:3000/testpost', dataXY)
+      var dataA = await this.axios.post('http://localhost:3000/testfalse', dataXY)
       console.log('data', dataA.data)
       if (dataA.data.data === 'Fail') {
         this.dataTable = []
       } else {
         this.dataTable = dataA.data.data
         this.dataTable.pop()
-        this.dataTable.pop()
+        // this.dataTable.pop()
       }
     }
   }
