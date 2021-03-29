@@ -11,8 +11,6 @@ const routes = [
   { path: '/', component: Home },
   { path: '/page2', component: page2 },
   { path: '/page0', component: page0 }
-
-
 ]
 
 const router = new VueRouter({
